@@ -13,9 +13,9 @@
     <div class="container">
         <header>
         <img src="img/logo.svg" alt="26andfour" class="logo">
-            <nav>
+            <nav class="">
                 <a href="#" class="hide-desktop">
-                    <img src="img/ham.svg" alt="toggle menu" class="menu">
+                    <img src="img/ham.svg" alt="toggle menu" class="menu" id="menu">
                 </a>
                 <ul class="show-desktop hide-mobile" id="nav">
                     <li id="exit" class="exit-btn hide-desktop"><img src="img/exit.svg" alt="exit"></li>
@@ -35,7 +35,7 @@
             <img src="img/scroll.svg" alt="scroll down" class="scroll hide-mobile show-desktop">
         </section>
     </div>
-    <div class="blue-container">
+    <div class="blue-container" id="service">
         <div class="container">
             <ul>
                 <li>
@@ -91,7 +91,23 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        var menu = document.getElementById('menu');
+        var nav = document.getElementById('nav');
+        var exit = document.getElementById('exit');
+
+        menu.addEventListener('click', function(e){
+            nav.classList.toggle('hide-mobile');
+            e.preventDefault();
+
+        });
+
+        exit.addEventListener('click', function(e){
+            nav.classList.add('hide-mobile');
+            e.preventDefault();
+
+        });
+    </script>
 </body>
-
-
 </html>
